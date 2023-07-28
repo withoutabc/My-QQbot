@@ -7,10 +7,10 @@ import (
 	"my-QQbot/global"
 )
 
-func Send(inter interface{}) {
+func Send(inter interface{}, ty string) {
 	client := req.C().EnableDumpAllWithoutResponse()
 	_, err := client.R().SetBody(inter).
-		Post(fmt.Sprintf("%s/send_group_msg", global.CqHttpUrl))
+		Post(fmt.Sprintf("%s/%s", global.CqHttpUrl, ty))
 	if err != nil {
 		log.Println(err)
 		return

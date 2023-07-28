@@ -1,6 +1,7 @@
 package send
 
 import (
+	"my-QQbot/global"
 	"my-QQbot/model"
 	"my-QQbot/server"
 )
@@ -11,5 +12,5 @@ func MsgSend(groupId int64, msg string) {
 		AutoEscape: "false",
 	}
 	menu.Message = msg
-	server.Send(menu)
+	server.Send(menu, global.GroupMsg)
 }
