@@ -7,6 +7,6 @@ import (
 
 func SeverSetUp() {
 	r := gin.Default()
-	r.POST("/msg", middleware.LimitMiddleware(), HandleMsg)
+	r.POST("/info", middleware.LimitMiddleware(), HandleMsg)
 	r.Run(":5701")
 }
